@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    ul {
+      border-bottom: 1px solid #BBB;
+      padding: 0 0 0 8px;
+      margin: 0;
+      height: 23px;
+      line-height: 25px;
+      background: #E8E8E8;
+      color: #555;
+      overflow-x: auto;
+    }
+
+    ul::after {
+      display: inline-block;
+      vertical-align: middle;
+      height: 23px;
+      content: '';
+    }
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 16px;
+    }
+
+    iframe {
+      border: 0;
+      height: calc(100% - 24px);
+      width: 100%
+    }
+
+    .link, link:visited {
+      color: #0074D9;
+      text-decoration: none;
+    }
+
+    .link {
+    }
+
+    .link_active {
+      color: #444;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Coverage report index</title>
+</head>
+<body>
+<ul>
+  %s
+</ul>
+<iframe src="%s"></iframe>
+<script>
+  var iframe = document.querySelector('iframe');
+
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('link') && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+
+
+      iframe.src = e.target.href;
+      document.querySelector('.link_active').classList.remove('link_active');
+      e.target.classList.add('link_active');
+    }
+  });
+</script>
+</body>
+</html>

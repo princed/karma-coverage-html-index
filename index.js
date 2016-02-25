@@ -19,7 +19,7 @@ function reporter(rootConfig, helper, logger) {
     });
   }
 
-  //
+  // Taken from karma-coverage
   var mainDir = reporterConfig && reporterConfig.dir || config.dir;
   var resolvedOutputDir = path.resolve(rootConfig.basePath, mainDir);
   var outputDir = helper.normalizeWinPath(resolvedOutputDir);
@@ -46,7 +46,7 @@ function reporter(rootConfig, helper, logger) {
 
       var content = util.format(template.toString(), browsersList, browsersArray[0].name);
 
-      log.warn('Writing coverage index.html to %s', coverageIndexPath);
+      log.debug('Writing coverage index.html to %s', coverageIndexPath);
       fs.writeFile(coverageIndexPath, content, function (err) {
         if (err) {
           log.error('Unable to write index.html to disk');

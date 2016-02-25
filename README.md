@@ -7,7 +7,7 @@ It creates `index.html` and shows reports in iframe allowing to switch between t
 Installation
 ------------
 
-Install the `karma-chai-plugins`:
+Install the `karma-coverage-html-index-reporter`:
 
 ```sh
 $ npm install karma-coverage-html-index-reporter --save-dev
@@ -36,4 +36,4 @@ Small portions of code are taken from [karma-coverage](https://github.com/karma-
 Contribution guidelines
 -----------------------
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using `npm test`.
+In lieu of a formal styleguide, take care to maintain the existing coding style.
